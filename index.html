@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Sudoku</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <h1>Sudoku</h1>
+      <nav class="levels" id="levels">
+        <button data-level="easy" class="active">Fácil</button>
+        <button data-level="medium">Médio</button>
+        <button data-level="hard">Difícil</button>
+        <button data-level="expert">Expert</button>
+      </nav>
+    </header>
+
+    <section class="bar">
+      <span id="timer">00:00</span>
+      <span id="mistakes">Erros: 0/3</span>
+      <button id="pause" title="Pausar">⏸</button>
+    </section>
+
+    <section class="board" id="board"></section>
+
+    <section class="tools">
+      <button id="undo" title="Desfazer (Ctrl+Z)">↶<small>Desfazer</small></button>
+      <button id="erase" title="Apagar (Backspace)">⌫<small>Apagar</small></button>
+      <button id="notes" title="Anotações (N)">✎<small>Anotações</small></button>
+      <button id="hint" title="Dica (H)">💡<small>Dica <b id="hints-left">3</b></small></button>
+    </section>
+
+    <section class="numpad" id="numpad"></section>
+
+    <div class="actions">
+      <button id="new">Novo jogo</button>
+    </div>
+    <p class="best" id="best"></p>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="dialog">
+        <h2 id="overlay-title"></h2>
+        <p id="overlay-text"></p>
+        <button id="overlay-btn">Novo jogo</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/solver.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
